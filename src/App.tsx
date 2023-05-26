@@ -56,13 +56,13 @@ function App() {
 
   return (
     <div className="container mx-auto p-5 text-lg text-gray-500 h-screen ">
-      <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+      <h1 className="mb-4 text-2xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl">
         Conversor de{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-sky-800 from-sky-400">
           Base Númerica
         </span>
       </h1>
-      <p className=" font-normal dark:text-gray-400 px-2 text-xs sm:text-sm">
+      <p className=" font-normal px-2 text-xs sm:text-sm">
         Descubre nuestro Conversor de Base Numérica: ¡convierte números en
         segundos! Selecciona la base de origen, ingresa el número y elige la
         base de destino. ¡Listo! Obtén la conversión al instante. ¡Explora la
@@ -80,7 +80,7 @@ function App() {
               </label>
               <select
                 id="base"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 onChange={({ target }) => resetInput(target.value as TBase)}
                 value={selectValue}
               >
@@ -95,7 +95,7 @@ function App() {
               <input
                 id="baseInput"
                 className={clsx(
-                  'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
+                  'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5',
                   isDisableInput ? 'bg-gray-200' : 'bg-gray-50',
                 )}
                 placeholder="Digite el número"
