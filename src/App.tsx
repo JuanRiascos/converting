@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react'
 import './App.css'
 import Button from './components/Button'
 import { TBase, TOption } from './type'
+import Logo from './img/PROGRAMA.png'
 
 function App() {
   const optionBase: TOption[] = [
@@ -12,12 +13,16 @@ function App() {
     { value: 'octal', label: 'Octal' },
     { value: 'hexadecimal', label: 'Hexadecimal' },
   ]
-  const initialBase: { [key in Exclude<TBase, 'custom'>]: number } = {
-    binary: 2,
-    decimal: 10,
-    hexadecimal: 16,
-    octal: 8,
-  }
+  const initialBase: { [key in Exclude<TBase, 'custom'>]: number } = useMemo(
+    () => ({
+      binary: 2,
+      decimal: 10,
+      hexadecimal: 16,
+      octal: 8,
+    }),
+    [],
+  )
+
   const [selectValue, setSelectValue] = useState<TBase>('custom')
   const [inputValue, setInputValue] = useState('')
   const [onSelectOut, setOnSelectOut] = useState<TBase>('custom')
@@ -50,7 +55,7 @@ function App() {
   }, [initialBase, inputValue, onSelectOut, selectValue])
 
   return (
-    <div className="container mx-auto p-5 text-lg text-gray-500 ">
+    <div className="container mx-auto p-5 text-lg text-gray-500 h-screen ">
       <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         Conversor de{' '}
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-sky-800 from-sky-400">
@@ -128,6 +133,15 @@ function App() {
           </article>
         )}
       </section>
+
+      <footer className='flex items-center absolute bottom-0 w-full justify-around'>
+        <img src={Logo} alt="" className='aspect-auto w-16 h-16' />
+        <div className='text-sm'>
+          <p>Autores</p>
+          <p>Juan David Restrepo Riascos</p>
+          <p>Cristian Julian Murcia Palomares</p>
+        </div>
+      </footer>
     </div>
   )
 }
